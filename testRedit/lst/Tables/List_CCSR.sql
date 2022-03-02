@@ -1,0 +1,27 @@
+﻿CREATE TABLE [lst].[List_CCSR] (
+    [CreatedDate]                       DATETIME       DEFAULT (getdate()) NOT NULL,
+    [CreatedBy]                         VARCHAR (50)   DEFAULT (suser_sname()) NOT NULL,
+    [LastUpdated]                       DATETIME       DEFAULT (getdate()) NOT NULL,
+    [LastUpdatedBy]                     VARCHAR (50)   DEFAULT (suser_sname()) NOT NULL,
+    [SrcFileName]                       VARCHAR (50)   NULL,
+    [lstCCSRKey]                        INT            IDENTITY (1, 1) NOT NULL,
+    [ICD-10-CM CODE]                    VARCHAR (50)   NULL,
+    [ICD-10-CM CODE DESCRIPTION]        VARCHAR (1000) NULL,
+    [Default CCSR CATEGORY]             VARCHAR (20)   NULL,
+    [Default CCSR CATEGORY DESCRIPTION] VARCHAR (1000) NULL,
+    [CCSR CATEGORY 1]                   VARCHAR (50)   NULL,
+    [CCSR CATEGORY 1 DESCRIPTION]       VARCHAR (1000) NULL,
+    [CCSR CATEGORY 2]                   VARCHAR (50)   NULL,
+    [CCSR CATEGORY 2 DESCRIPTION]       VARCHAR (1000) NULL,
+    [CCSR CATEGORY 3]                   VARCHAR (50)   NULL,
+    [CCSR CATEGORY 3 DESCRIPTION]       VARCHAR (1000) NULL,
+    [CCSR CATEGORY 4]                   VARCHAR (50)   NULL,
+    [CCSR CATEGORY 4 DESCRIPTION]       VARCHAR (1000) NULL,
+    [CCSR CATEGORY 5]                   VARCHAR (50)   NULL,
+    [CCSR CATEGORY 5 DESCRIPTION]       VARCHAR (1000) NULL,
+    [ACTIVE]                            CHAR (1)       DEFAULT ('Y') NULL,
+    [EffectiveDate]                     DATE           DEFAULT (getdate()) NULL,
+    [ExpirationDate]                    DATE           DEFAULT ('2099-12-31') NULL,
+    PRIMARY KEY CLUSTERED ([lstCCSRKey] ASC)
+);
+

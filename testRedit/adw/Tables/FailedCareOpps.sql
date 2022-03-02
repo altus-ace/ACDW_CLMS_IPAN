@@ -1,0 +1,25 @@
+﻿CREATE TABLE [adw].[FailedCareOpps] (
+    [FailedCareOpps]      INT           IDENTITY (1, 1) NOT NULL,
+    [CreateDate]          DATETIME2 (7) DEFAULT (getdate()) NOT NULL,
+    [CreatedBy]           VARCHAR (50)  DEFAULT (suser_name()) NOT NULL,
+    [LastUpdatedDate]     DATETIME2 (7) DEFAULT (getdate()) NOT NULL,
+    [LastUpdatedBy]       VARCHAR (50)  DEFAULT (suser_name()) NOT NULL,
+    [LoadDate]            DATE          NOT NULL,
+    [QMDate]              DATE          NOT NULL,
+    [ClientKey]           INT           NOT NULL,
+    [EffectiveDate]       DATE          NOT NULL,
+    [AdiKey]              INT           NOT NULL,
+    [StagingKey]          INT           NOT NULL,
+    [ClientMemberKey]     VARCHAR (50)  NOT NULL,
+    [AceID]               NUMERIC (15)  NULL,
+    [MeasureID]           VARCHAR (50)  NULL,
+    [srcMeasureName]      VARCHAR (50)  NULL,
+    [MbrPlanName]         VARCHAR (50)  NULL,
+    [MbrCareOpToPlnFlg]   TINYINT       DEFAULT ((0)) NULL,
+    [MbrActiveFlg]        BIT           DEFAULT ((0)) NULL,
+    [MbrCOPInContractFlg] BIT           DEFAULT ((0)) NULL,
+    [Exported]            TINYINT       NOT NULL,
+    [ExportedDate]        DATE          NULL,
+    PRIMARY KEY CLUSTERED ([FailedCareOpps] ASC)
+);
+

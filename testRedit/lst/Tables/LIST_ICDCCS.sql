@@ -1,0 +1,26 @@
+﻿CREATE TABLE [lst].[LIST_ICDCCS] (
+    [lstIcdCcsKey]               INT           IDENTITY (1, 1) NOT NULL,
+    [srcFileName]                VARCHAR (100) NULL,
+    [DataDate]                   DATE          NULL,
+    [CreatedDate]                DATETIME      DEFAULT (getdate()) NOT NULL,
+    [CreatedBy]                  VARCHAR (50)  DEFAULT (suser_sname()) NOT NULL,
+    [LastUpdatedDate]            DATETIME      DEFAULT (getdate()) NOT NULL,
+    [LastUpdatedBy]              VARCHAR (50)  DEFAULT (suser_sname()) NOT NULL,
+    [EffectiveDate]              DATE          NOT NULL,
+    [ExpirationDate]             DATE          NOT NULL,
+    [ICD-10-CM_CODE]             VARCHAR (500) NULL,
+    [CCS_CATEGORY]               VARCHAR (500) NULL,
+    [ICD-10-CM_CODE_DESCRIPTION] VARCHAR (500) NULL,
+    [CCS_CATEGORY_DESCRIPTION]   VARCHAR (500) NULL,
+    [MULTI_CCS_LVL1]             VARCHAR (500) NULL,
+    [MULTI_CCS_LVL1_LABEL]       VARCHAR (500) NULL,
+    [MULTI_CCS_LVL2]             VARCHAR (500) NULL,
+    [MULTI_CCS_LVL2_LABEL]       VARCHAR (500) NULL,
+    [MULTI_CCS_LVL3]             VARCHAR (500) NULL,
+    [MULTI_CCS_LVL3_LABEL]       VARCHAR (500) NULL,
+    [MULTI_CCS_LVL4]             VARCHAR (500) NULL,
+    [MULTI_CCS_LVL4_LABEL]       VARCHAR (500) NULL,
+    [Version]                    VARCHAR (50)  NULL,
+    PRIMARY KEY CLUSTERED ([lstIcdCcsKey] ASC)
+);
+

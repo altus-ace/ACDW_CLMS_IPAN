@@ -1,0 +1,26 @@
+﻿CREATE TABLE [adw].[FctRSCalc] (
+    [FctRSCalcKey]       INT             IDENTITY (1, 1) NOT NULL,
+    [CreatedDate]        DATETIME        DEFAULT (getdate()) NULL,
+    [CreatedBy]          VARCHAR (20)    DEFAULT (suser_sname()) NULL,
+    [LastUpdatedDate]    DATETIME        DEFAULT (getdate()) NULL,
+    [LastUpdatedBy]      VARCHAR (20)    DEFAULT (suser_sname()) NULL,
+    [AdiKey]             INT             NULL,
+    [adiTableName]       VARCHAR (100)   NULL,
+    [SrcFileName]        VARCHAR (100)   NULL,
+    [LoadDate]           DATE            NULL,
+    [DataDate]           DATE            NULL,
+    [ClientKey]          INT             NULL,
+    [ClientMemberKey]    VARCHAR (50)    NULL,
+    [EffectiveAsOfDate]  DATE            NULL,
+    [AttribNPI]          VARCHAR (10)    NULL,
+    [AttribTIN]          VARCHAR (10)    NULL,
+    [PrimSvcYr]          INT             NULL,
+    [PrimSvcMth]         INT             NULL,
+    [ClientRiskScore]    DECIMAL (10, 2) NULL,
+    [CalcRiskScore]      DECIMAL (10, 2) NULL,
+    [CalcRiskScore_Alt1] DECIMAL (10, 2) NULL,
+    [CalcRiskScore_Alt2] DECIMAL (10, 2) NULL,
+    [CalcRiskScore_Alt3] DECIMAL (10, 2) NULL,
+    PRIMARY KEY CLUSTERED ([FctRSCalcKey] ASC)
+);
+

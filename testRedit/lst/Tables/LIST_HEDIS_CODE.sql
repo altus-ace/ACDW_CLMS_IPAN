@@ -1,0 +1,25 @@
+﻿CREATE TABLE [lst].[LIST_HEDIS_CODE] (
+    [lstHedisCodeKey]       INT           IDENTITY (1, 1) NOT NULL,
+    [VALUE_SET_NAME]        VARCHAR (100) NULL,
+    [VALUE_SET_OID]         VARCHAR (100) NULL,
+    [VALUE_SET_VER]         VARCHAR (50)  NULL,
+    [VALUE_CODE]            VARCHAR (50)  NULL,
+    [VALUE_CODE_WithoutDot] VARCHAR (50)  NULL,
+    [VALUE_CODE_NAME]       VARCHAR (MAX) NULL,
+    [VALUE_CODE_SYSTEM]     VARCHAR (50)  NULL,
+    [CODE_SYSTEM_OID]       VARCHAR (50)  NULL,
+    [CODE_SYSTEM_VER]       VARCHAR (50)  NULL,
+    [A_LAST_UPDATE_DATE]    DATETIME      DEFAULT (getdate()) NULL,
+    [A_LAST_UPDATE_BY]      VARCHAR (20)  DEFAULT (suser_sname()) NULL,
+    [A_LAST_UPDATE_FLAG]    VARCHAR (1)   NULL,
+    [ACTIVE]                CHAR (1)      NULL,
+    [EffectiveDate]         DATE          DEFAULT (getdate()) NULL,
+    [ExpirationDate]        DATE          DEFAULT ('2099-12-31') NULL,
+    [CreatedDate]           DATETIME2 (7) DEFAULT (getdate()) NOT NULL,
+    [CreatedBy]             VARCHAR (50)  DEFAULT (suser_sname()) NOT NULL,
+    [LastUpdatedDate]       DATETIME2 (7) DEFAULT (getdate()) NOT NULL,
+    [LastUpdatedBy]         VARCHAR (50)  DEFAULT (suser_sname()) NOT NULL,
+    [SrcFileName]           VARCHAR (50)  NULL,
+    PRIMARY KEY CLUSTERED ([lstHedisCodeKey] ASC)
+);
+

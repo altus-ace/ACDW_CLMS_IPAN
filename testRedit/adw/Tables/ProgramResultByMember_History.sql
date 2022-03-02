@@ -1,0 +1,27 @@
+﻿CREATE TABLE [adw].[ProgramResultByMember_History] (
+    [URN]               INT            IDENTITY (1, 1) NOT NULL,
+    [CreatedDate]       DATETIME       DEFAULT (getdate()) NULL,
+    [CreatedBy]         VARCHAR (20)   DEFAULT (suser_sname()) NULL,
+    [LastUpdatedDate]   DATETIME       DEFAULT (getdate()) NULL,
+    [LastUpdatedBy]     VARCHAR (20)   DEFAULT (suser_sname()) NULL,
+    [AdiKey]            INT            NULL,
+    [adiTableName]      VARCHAR (100)  NULL,
+    [SrcFileName]       VARCHAR (100)  NULL,
+    [LoadDate]          DATE           NULL,
+    [DataDate]          DATE           NULL,
+    [EffectiveAsOfDate] DATE           NULL,
+    [ProgramID]         VARCHAR (50)   NULL,
+    [ProgramName]       VARCHAR (50)   NULL,
+    [ProgramStatus]     VARCHAR (50)   NULL,
+    [ClientKey]         INT            NULL,
+    [ClientMemberKey]   VARCHAR (50)   NULL,
+    [FirstName]         VARCHAR (50)   NULL,
+    [LastName]          VARCHAR (50)   NULL,
+    [Gender]            VARCHAR (1)    NULL,
+    [DOB]               DATE           NULL,
+    [AttribNPI]         VARCHAR (10)   NULL,
+    [AttribTIN]         VARCHAR (10)   NULL,
+    [RiskScore]         FLOAT (53)     NULL,
+    [Notes]             NVARCHAR (150) NULL
+);
+

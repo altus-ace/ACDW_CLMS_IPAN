@@ -1,0 +1,25 @@
+﻿CREATE TABLE [adw].[MbrAddress] (
+    [mbrAddressKey]   INT           IDENTITY (1, 1) NOT NULL,
+    [ClientMemberKey] VARCHAR (50)  NOT NULL,
+    [ClientKey]       INT           NULL,
+    [adiKey]          INT           NOT NULL,
+    [adiTableName]    VARCHAR (100) NOT NULL,
+    [IsCurrent]       CHAR (1)      CONSTRAINT [DF_mbrAddress_recordFlag] DEFAULT ('Y') NOT NULL,
+    [EffectiveDate]   DATE          NOT NULL,
+    [ExpirationDate]  DATE          CONSTRAINT [DF_MbrAddressExpirationDate] DEFAULT ('12/31/9999') NOT NULL,
+    [AddressTypeKey]  INT           NOT NULL,
+    [Address1]        VARCHAR (100) NULL,
+    [Address2]        VARCHAR (100) NULL,
+    [CITY]            VARCHAR (65)  NULL,
+    [STATE]           CHAR (25)     NULL,
+    [ZIP]             VARCHAR (20)  NULL,
+    [COUNTY]          VARCHAR (65)  NULL,
+    [LoadDate]        DATE          NOT NULL,
+    [DataDate]        DATE          NOT NULL,
+    [CreatedDate]     DATETIME2 (7) CONSTRAINT [DF_MbrAddress_CreateDate] DEFAULT (getdate()) NOT NULL,
+    [CreatedBy]       VARCHAR (50)  CONSTRAINT [DF_MbrAddress_CreateBy] DEFAULT (suser_sname()) NOT NULL,
+    [LastUpdatedDate] DATETIME2 (7) CONSTRAINT [DF_MbrAddress_LastUpdatedDate] DEFAULT (getdate()) NOT NULL,
+    [LastUpdatedBy]   VARCHAR (50)  CONSTRAINT [DF_MbrAddress_LastUpdatedBy] DEFAULT (suser_sname()) NOT NULL,
+    PRIMARY KEY CLUSTERED ([mbrAddressKey] ASC)
+);
+
